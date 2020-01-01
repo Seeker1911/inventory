@@ -158,9 +158,9 @@ namespace Inventory
         private void Main_Products_Delete_Btn_Click(object sender, EventArgs e)
         {
             Product product = (Product)MainProducts_GridView.CurrentRow.DataBoundItem;
-            if (product.AssociatedParts.Count > 0)
+            if (Product.AssociatedParts.Count > 0)
             {
-                MessageBox.Show("Cannot delete a product that has associated parts.  Remove assosicated parts prior to attempting to remove a product.");
+                MessageBox.Show("Cannot delete a product that has associated parts.  Remove parts prior to attempting to remove a product.");
             }
             else
             {

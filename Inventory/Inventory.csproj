@@ -83,6 +83,9 @@
     <Compile Include="Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddProduct.resx">
+      <DependentUpon>AddProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ModifyPart.resx">
       <DependentUpon>ModifyPart.cs</DependentUpon>
     </EmbeddedResource>

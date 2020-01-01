@@ -23,7 +23,7 @@ namespace Inventory
             MaxTextBox.Text = Convert.ToString(product.Max);
 
             ModifyProduct_CandidateParts_GridView.DataSource = Inventory.Parts;
-            ModifyProduct_PartsAssociated_GridView.DataSource = product.AssociatedParts;
+            ModifyProduct_PartsAssociated_GridView.DataSource = Product.AssociatedParts;
         }
         private void CancelBtn_Click(object sender, EventArgs e)
         {
