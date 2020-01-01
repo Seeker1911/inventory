@@ -5,6 +5,10 @@
     <e p="C:\Users\IEUser\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_Inventory.-644199956.00" t="ExcludeRecursive" />
     <e p="C:\Users\IEUser\RiderProjects\Inventory" t="IncludeFlat">
       <e p="Inventory" t="IncludeRecursive">
+        <e p="AddPart.Designer.cs" t="Include" />
+        <e p="AddPartForm.cs" t="Include" />
+        <e p="AddProduct.cs" t="Include" />
+        <e p="AddProduct.Designer.cs" t="Include" />
         <e p="App.config" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Form1.Designer.cs" t="Include" />
@@ -12,6 +16,11 @@
         <e p="Inventory.cs" t="Include" />
         <e p="Inventory.csproj" t="IncludeRecursive" />
         <e p="Main_Form.cs" t="Include" />
+        <e p="ModifyPart.cs" t="Include" />
+        <e p="ModifyPart.Designer.cs" t="Include" />
+        <e p="ModifyPart.resx" t="Include" />
+        <e p="ModifyProduct.cs" t="Include" />
+        <e p="ModifyProduct.Designer.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive" />
         <e p="Outsourced.cs" t="Include" />
         <e p="Part.cs" t="Include" />

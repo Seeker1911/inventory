@@ -9,7 +9,7 @@ using System.ComponentModel;
 
 namespace Inventory
 {
-    public class Outsourced
+    public class Outsourced : Part
     {
         
         private string _companyName;
