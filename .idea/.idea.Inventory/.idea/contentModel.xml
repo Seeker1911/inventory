@@ -9,6 +9,7 @@
         <e p="AddPartForm.cs" t="Include" />
         <e p="AddProduct.cs" t="Include" />
         <e p="AddProduct.Designer.cs" t="Include" />
+        <e p="AddProduct.resx" t="Include" />
         <e p="App.config" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Form1.Designer.cs" t="Include" />
