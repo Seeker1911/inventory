@@ -31,17 +31,6 @@ namespace Inventory
         /// </summary>
         private void InitializeComponent()
         {
-            // this.SuspendLayout();
-            // // 
-            // // ModifyPart
-            // // 
-            // this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            // this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            // this.ClientSize = new System.Drawing.Size(933, 519);
-            // this.Name = "ModifyPart";
-            // this.Text = "ModifyPart";
-            // this.ResumeLayout(false);
-            
             this.ModifyPartLabel = new System.Windows.Forms.Label();
             this.IdentifierLabelTextBox = new System.Windows.Forms.TextBox();
             this.MaxTextBox = new System.Windows.Forms.TextBox();
@@ -66,8 +55,9 @@ namespace Inventory
             // ModifyPartLabel
             // 
             this.ModifyPartLabel.AutoSize = true;
-            this.ModifyPartLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ModifyPartLabel.Location = new System.Drawing.Point(40, 9);
+            this.ModifyPartLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F,
+                System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.ModifyPartLabel.Location = new System.Drawing.Point(47, 10);
             this.ModifyPartLabel.Name = "ModifyPartLabel";
             this.ModifyPartLabel.Size = new System.Drawing.Size(110, 25);
             this.ModifyPartLabel.TabIndex = 36;
@@ -75,122 +65,122 @@ namespace Inventory
             // 
             // IdentifierLabelTextBox
             // 
-            this.IdentifierLabelTextBox.Location = new System.Drawing.Point(207, 277);
+            this.IdentifierLabelTextBox.Location = new System.Drawing.Point(241, 320);
             this.IdentifierLabelTextBox.Name = "IdentifierLabelTextBox";
-            this.IdentifierLabelTextBox.Size = new System.Drawing.Size(151, 20);
+            this.IdentifierLabelTextBox.Size = new System.Drawing.Size(175, 23);
             this.IdentifierLabelTextBox.TabIndex = 52;
             // 
             // MaxTextBox
             // 
-            this.MaxTextBox.Location = new System.Drawing.Point(207, 234);
+            this.MaxTextBox.Location = new System.Drawing.Point(241, 270);
             this.MaxTextBox.Name = "MaxTextBox";
-            this.MaxTextBox.Size = new System.Drawing.Size(113, 20);
+            this.MaxTextBox.Size = new System.Drawing.Size(131, 23);
             this.MaxTextBox.TabIndex = 51;
             // 
             // MinTextBox
             // 
-            this.MinTextBox.Location = new System.Drawing.Point(377, 234);
+            this.MinTextBox.Location = new System.Drawing.Point(440, 270);
             this.MinTextBox.Name = "MinTextBox";
-            this.MinTextBox.Size = new System.Drawing.Size(100, 20);
+            this.MinTextBox.Size = new System.Drawing.Size(116, 23);
             this.MinTextBox.TabIndex = 50;
             // 
             // PriceCostTextBox
             // 
-            this.PriceCostTextBox.Location = new System.Drawing.Point(207, 193);
+            this.PriceCostTextBox.Location = new System.Drawing.Point(241, 223);
             this.PriceCostTextBox.Name = "PriceCostTextBox";
-            this.PriceCostTextBox.Size = new System.Drawing.Size(100, 20);
+            this.PriceCostTextBox.Size = new System.Drawing.Size(116, 23);
             this.PriceCostTextBox.TabIndex = 49;
             // 
             // InventoryTextBox
             // 
-            this.InventoryTextBox.Location = new System.Drawing.Point(207, 159);
+            this.InventoryTextBox.Location = new System.Drawing.Point(241, 183);
             this.InventoryTextBox.Name = "InventoryTextBox";
-            this.InventoryTextBox.Size = new System.Drawing.Size(100, 20);
+            this.InventoryTextBox.Size = new System.Drawing.Size(116, 23);
             this.InventoryTextBox.TabIndex = 48;
             // 
             // NameTextBox
             // 
-            this.NameTextBox.Location = new System.Drawing.Point(207, 125);
+            this.NameTextBox.Location = new System.Drawing.Point(241, 144);
             this.NameTextBox.Name = "NameTextBox";
-            this.NameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.NameTextBox.Size = new System.Drawing.Size(116, 23);
             this.NameTextBox.TabIndex = 47;
             // 
             // IDTextBox
             // 
-            this.IDTextBox.Location = new System.Drawing.Point(207, 90);
+            this.IDTextBox.Location = new System.Drawing.Point(241, 104);
             this.IDTextBox.Name = "IDTextBox";
-            this.IDTextBox.Size = new System.Drawing.Size(100, 20);
+            this.IDTextBox.Size = new System.Drawing.Size(116, 23);
             this.IDTextBox.TabIndex = 46;
             // 
             // Max
             // 
             this.Max.AutoSize = true;
-            this.Max.Location = new System.Drawing.Point(347, 237);
+            this.Max.Location = new System.Drawing.Point(405, 273);
             this.Max.Name = "Max";
-            this.Max.Size = new System.Drawing.Size(27, 13);
+            this.Max.Size = new System.Drawing.Size(29, 15);
             this.Max.TabIndex = 45;
             this.Max.Text = "Max";
             // 
             // IdentifierLabel
             // 
             this.IdentifierLabel.AutoSize = true;
-            this.IdentifierLabel.Location = new System.Drawing.Point(120, 280);
+            this.IdentifierLabel.Location = new System.Drawing.Point(140, 323);
             this.IdentifierLabel.Name = "IdentifierLabel";
-            this.IdentifierLabel.Size = new System.Drawing.Size(62, 13);
+            this.IdentifierLabel.Size = new System.Drawing.Size(67, 15);
             this.IdentifierLabel.TabIndex = 44;
             this.IdentifierLabel.Text = "Machine ID";
             // 
             // Min
             // 
             this.Min.AutoSize = true;
-            this.Min.Location = new System.Drawing.Point(174, 237);
+            this.Min.Location = new System.Drawing.Point(203, 273);
             this.Min.Name = "Min";
-            this.Min.Size = new System.Drawing.Size(24, 13);
+            this.Min.Size = new System.Drawing.Size(28, 15);
             this.Min.TabIndex = 43;
             this.Min.Text = "Min";
             // 
             // PriceCost
             // 
             this.PriceCost.AutoSize = true;
-            this.PriceCost.Location = new System.Drawing.Point(138, 196);
+            this.PriceCost.Location = new System.Drawing.Point(161, 226);
             this.PriceCost.Name = "PriceCost";
-            this.PriceCost.Size = new System.Drawing.Size(63, 13);
+            this.PriceCost.Size = new System.Drawing.Size(68, 15);
             this.PriceCost.TabIndex = 42;
             this.PriceCost.Text = "Price / Cost";
             // 
             // InventoryLabel
             // 
             this.InventoryLabel.AutoSize = true;
-            this.InventoryLabel.Location = new System.Drawing.Point(150, 162);
+            this.InventoryLabel.Location = new System.Drawing.Point(175, 187);
             this.InventoryLabel.Name = "InventoryLabel";
-            this.InventoryLabel.Size = new System.Drawing.Size(51, 13);
+            this.InventoryLabel.Size = new System.Drawing.Size(57, 15);
             this.InventoryLabel.TabIndex = 41;
             this.InventoryLabel.Text = "Inventory";
             // 
             // NameLabel
             // 
             this.NameLabel.AutoSize = true;
-            this.NameLabel.Location = new System.Drawing.Point(166, 128);
+            this.NameLabel.Location = new System.Drawing.Point(194, 148);
             this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(35, 13);
+            this.NameLabel.Size = new System.Drawing.Size(39, 15);
             this.NameLabel.TabIndex = 40;
             this.NameLabel.Text = "Name";
             // 
             // ID
             // 
             this.ID.AutoSize = true;
-            this.ID.Location = new System.Drawing.Point(183, 93);
+            this.ID.Location = new System.Drawing.Point(213, 107);
             this.ID.Name = "ID";
-            this.ID.Size = new System.Drawing.Size(18, 13);
+            this.ID.Size = new System.Drawing.Size(18, 15);
             this.ID.TabIndex = 39;
             this.ID.Text = "ID";
             // 
             // OutsourcedRadio
             // 
             this.OutsourcedRadio.AutoSize = true;
-            this.OutsourcedRadio.Location = new System.Drawing.Point(258, 27);
+            this.OutsourcedRadio.Location = new System.Drawing.Point(301, 31);
             this.OutsourcedRadio.Name = "OutsourcedRadio";
-            this.OutsourcedRadio.Size = new System.Drawing.Size(80, 17);
+            this.OutsourcedRadio.Size = new System.Drawing.Size(87, 19);
             this.OutsourcedRadio.TabIndex = 38;
             this.OutsourcedRadio.TabStop = true;
             this.OutsourcedRadio.Text = "Outsourced";
@@ -200,9 +190,9 @@ namespace Inventory
             // InhouseRadio
             // 
             this.InhouseRadio.AutoSize = true;
-            this.InhouseRadio.Location = new System.Drawing.Point(169, 27);
+            this.InhouseRadio.Location = new System.Drawing.Point(197, 31);
             this.InhouseRadio.Name = "InhouseRadio";
-            this.InhouseRadio.Size = new System.Drawing.Size(68, 17);
+            this.InhouseRadio.Size = new System.Drawing.Size(74, 19);
             this.InhouseRadio.TabIndex = 37;
             this.InhouseRadio.TabStop = true;
             this.InhouseRadio.Text = "In-House";
@@ -211,9 +201,9 @@ namespace Inventory
             // 
             // CancelBtn
             // 
-            this.CancelBtn.Location = new System.Drawing.Point(437, 376);
+            this.CancelBtn.Location = new System.Drawing.Point(510, 434);
             this.CancelBtn.Name = "CancelBtn";
-            this.CancelBtn.Size = new System.Drawing.Size(75, 23);
+            this.CancelBtn.Size = new System.Drawing.Size(87, 27);
             this.CancelBtn.TabIndex = 54;
             this.CancelBtn.Text = "Cancel";
             this.CancelBtn.UseVisualStyleBackColor = true;
@@ -221,19 +211,19 @@ namespace Inventory
             // 
             // SaveBtn
             // 
-            this.SaveBtn.Location = new System.Drawing.Point(337, 376);
+            this.SaveBtn.Location = new System.Drawing.Point(393, 434);
             this.SaveBtn.Name = "SaveBtn";
-            this.SaveBtn.Size = new System.Drawing.Size(75, 23);
+            this.SaveBtn.Size = new System.Drawing.Size(87, 27);
             this.SaveBtn.TabIndex = 53;
             this.SaveBtn.Text = "Save";
             this.SaveBtn.UseVisualStyleBackColor = true;
             this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
-            // ModifyPartForm
+            // ModifyPart
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(549, 426);
+            this.ClientSize = new System.Drawing.Size(640, 492);
             this.Controls.Add(this.CancelBtn);
             this.Controls.Add(this.SaveBtn);
             this.Controls.Add(this.IdentifierLabelTextBox);
@@ -253,11 +243,10 @@ namespace Inventory
             this.Controls.Add(this.OutsourcedRadio);
             this.Controls.Add(this.InhouseRadio);
             this.Controls.Add(this.ModifyPartLabel);
-            this.Name = "ModifyPartForm";
+            this.Name = "ModifyPart";
+            this.Text = "Inventory Part";
             this.ResumeLayout(false);
             this.PerformLayout();
-
-            
         }
 
         #endregion

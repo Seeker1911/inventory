@@ -40,21 +40,21 @@ namespace Inventory
             */
 
             // Create products
-            Product product1 = new Product(001, "Yellow Card", 99.00m, 5, 1, 10);
-            Product product2 = new Product(002, "Green Card", 82.00m, 15, 1, 10);
-            Product product3 = new Product(003, "Blue Card", 54.10m, 28, 1, 10);
-            Product product4 = new Product(004, "Purple Card", 78.25m, 17, 1, 10);
-            Product product5 = new Product(005, "Red Card", 20.05m, 5, 1, 10);
+            Product product1 = new Product(001, "Python book", 20.99m, 20, 1, 100);
+            Product product2 = new Product(002, "Golang book", 23.00m, 80, 1, 100);
+            Product product3 = new Product(003, "Javascript book", 10.00m, 50, 1, 100);
+            Product product4 = new Product(004, "C sharp book", 100.00m, 30, 1, 100);
+            // Product product5 = new Product(005, "Red Card", 20.05m, 5, 1, 10);
 
             // Create inhouse parts
-            Part inhouse1 = new Inhouse(111, "Card Holder", 10.00m, 115, 1, 10, 7777);
-            Part inhouse2 = new Inhouse(112, "Magnet", 8.00m, 430, 1, 10, 7778);
-            Part inhouse3 = new Inhouse(113, "Wallet", 16.00m, 66, 1, 10, 7779);
+            Part inhouse1 = new Inhouse(111, "binding", 5.00m, 150, 1, 1000, 1111);
+            Part inhouse2 = new Inhouse(112, "cover", 8.00m, 25, 1, 1000, 1112);
+            Part inhouse3 = new Inhouse(113, "packaging", 5.00m, 89, 1, 1000, 1113);
 
             // Create outsourced parts
-            Part outsourced1 = new Outsourced(211, "Glue", 17.00m, 115, 1, 10, "Company A");
-            Part outsourced2 = new Outsourced(212, "Thread", 21.20m, 115, 1, 10, "Company B");
-            Part outsourced3 = new Outsourced(213, "Leather Straps", 36.99m, 115, 1, 10, "Company B");
+            Part outsourced1 = new Outsourced(211, "paper", 30.00m, 10, 1, 50, "Dunder Miflin");
+            Part outsourced2 = new Outsourced(212, "ink", 20.00m, 20, 1, 50, "Hemingway ink co.");
+            // Part outsourced3 = new Outsourced(213, "Leather Straps", 36.99m, 115, 1, 10, "Company B");
 
             // Add products to Products list
 
@@ -62,7 +62,7 @@ namespace Inventory
             Products.Add(product2);
             Products.Add(product3);
             Products.Add(product4);
-            Products.Add(product5);
+            // Products.Add(product5);
 
             // Add parts to Parts list
             Parts.Add(inhouse1);
@@ -70,7 +70,7 @@ namespace Inventory
             Parts.Add(inhouse3);
             Parts.Add(outsourced1);
             Parts.Add(outsourced2);
-            Parts.Add(outsourced3);
+            // Parts.Add(outsourced3);
 
             // Add parts to products associated list
 
@@ -80,23 +80,23 @@ namespace Inventory
             product1.AddAssociatedPart(inhouse3);
             product1.AddAssociatedPart(outsourced1);
             product1.AddAssociatedPart(outsourced2);
-            product1.AddAssociatedPart(outsourced3);
+            // product1.AddAssociatedPart(outsourced3);
 
             // product2 associated parts
             product2.AddAssociatedPart(inhouse1);
-            product2.AddAssociatedPart(outsourced3);
+            // product2.AddAssociatedPart(outsourced3);
 
             // product3 associated parts
             product3.AddAssociatedPart(inhouse2);
 
             // product4 associated parts
             product4.AddAssociatedPart(inhouse1);
-            product4.AddAssociatedPart(outsourced3);
+            // product4.AddAssociatedPart(outsourced3);
 
             // product5 associated parts
-            product5.AddAssociatedPart(inhouse3);
-            product5.AddAssociatedPart(outsourced1);
-            product5.AddAssociatedPart(outsourced3);
+            // product5.AddAssociatedPart(inhouse3);
+            // product5.AddAssociatedPart(outsourced1);
+            // product5.AddAssociatedPart(outsourced3);
 
         }
 
@@ -139,7 +139,7 @@ namespace Inventory
                 }
                 else
                 {
-                    MessageBox.Show("Product does not Exist");
+                    MessageBox.Show($"No product with ID: {productID}");
                     check = false;
                 }
             }
@@ -196,7 +196,7 @@ namespace Inventory
                 }
                 else
                 {
-                    MessageBox.Show("Part does not Exist");
+                    MessageBox.Show($"No part with ID: {partID}");
                     check = false;
                 }
             }

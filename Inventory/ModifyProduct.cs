@@ -67,5 +67,10 @@ namespace Inventory
                 }
             }
         }
+
+        private void ModifyProduct_Load(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

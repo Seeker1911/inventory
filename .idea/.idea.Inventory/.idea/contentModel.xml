@@ -22,6 +22,7 @@
         <e p="ModifyPart.resx" t="Include" />
         <e p="ModifyProduct.cs" t="Include" />
         <e p="ModifyProduct.Designer.cs" t="Include" />
+        <e p="ModifyProduct.resx" t="Include" />
         <e p="obj" t="ExcludeRecursive" />
         <e p="Outsourced.cs" t="Include" />
         <e p="Part.cs" t="Include" />
