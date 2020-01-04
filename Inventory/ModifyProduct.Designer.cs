@@ -228,6 +228,7 @@ namespace Inventory
             this.AddBtn.TabIndex = 57;
             this.AddBtn.Text = "Add";
             this.AddBtn.UseVisualStyleBackColor = true;
+            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // ModifyProduct_Search_Btn
             // 
@@ -254,6 +255,7 @@ namespace Inventory
             this.DeleteBtn.TabIndex = 54;
             this.DeleteBtn.Text = "Delete";
             this.DeleteBtn.UseVisualStyleBackColor = true;
+            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
             // 
             // Min
             // 

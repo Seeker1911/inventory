@@ -49,7 +49,7 @@ namespace Inventory
                 Inventory.AddPart(outsourcedPart);
 
             }
-            Inventory.RefreshLists();
+            // Inventory.RefreshLists();
             Close();
         }
     }

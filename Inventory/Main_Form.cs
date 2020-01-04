@@ -35,13 +35,11 @@ namespace Inventory
             bsProduct.DataSource = Inventory.Products;
             MainProducts_GridView.DataSource = bsProduct;
 
-            /*
             bsPart.DataSource = null;
             bsPart.DataSource = Inventory.Parts;
 
             bsProduct.DataSource = null;
             bsProduct.DataSource = Inventory.Products;
-            */
 
         }
 
@@ -107,6 +105,7 @@ namespace Inventory
 
         private void Main_Parts_Delete_Btn_Click(object sender, EventArgs e)
         {
+            
             var rowIndex = MainParts_GridView.CurrentCell.RowIndex;
             MainParts_GridView.Rows.RemoveAt(rowIndex);
         }

@@ -121,6 +121,7 @@ namespace Inventory
             this.DeleteBtn.TabIndex = 16;
             this.DeleteBtn.Text = "Delete";
             this.DeleteBtn.UseVisualStyleBackColor = true;
+            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
             // 
             // Candidate_Parts_Label
             // 
@@ -246,6 +247,7 @@ namespace Inventory
                 System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.AddProduct_PartsAssociated_GridView.Location = new System.Drawing.Point(484, 300);
             this.AddProduct_PartsAssociated_GridView.Name = "AddProduct_PartsAssociated_GridView";
+            this.AddProduct_PartsAssociated_GridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.AddProduct_PartsAssociated_GridView.SelectionMode =
                 System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.AddProduct_PartsAssociated_GridView.Size = new System.Drawing.Size(471, 148);
