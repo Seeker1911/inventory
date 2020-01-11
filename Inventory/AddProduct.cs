@@ -5,11 +5,12 @@ namespace Inventory
 {
     public partial class AddProduct : Form
     {
+        Product product = new Product();
         public AddProduct()
         {
             InitializeComponent();
             AddProduct_CandidateParts_GridView.DataSource = Inventory.Parts;
-            AddProduct_PartsAssociated_GridView.DataSource = product.AssociatedParts;
+            AddProduct_PartsAssociated_GridView.DataSource = Product.AssociatedParts;
         }
 
         private void Add_Product_Form_Load(object sender, EventArgs e)
@@ -89,7 +90,7 @@ namespace Inventory
                         foreach (DataGridViewRow row in AddProduct_PartsAssociated_GridView.Rows)
                         {
                             Part associatedPart = (Part)row.DataBoundItem;
-                            product.AssociatedParts.Add(associatedPart);
+                            Product.AssociatedParts.Add(associatedPart);
                         }
                     }
                     catch { }

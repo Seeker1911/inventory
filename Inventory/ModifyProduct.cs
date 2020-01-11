@@ -12,9 +12,9 @@ namespace Inventory
 {
     public partial class ModifyProduct : Form
     {
-        private Product product = new Product();
-          {
-        public ModifyProductForm(Product product)
+        //private Product product = new Product();
+          //{
+        public ModifyProduct(Product product)
         {
             InitializeComponent();
 
@@ -26,7 +26,7 @@ namespace Inventory
             MaxTextBox.Text = Convert.ToString(product.Max);
 
             ModifyProduct_CandidateParts_GridView.DataSource = Inventory.Parts;
-            ModifyProduct_PartsAssociated_GridView.DataSource = product.AssociatedParts;
+            ModifyProduct_PartsAssociated_GridView.DataSource = Product.AssociatedParts;
         }
 
         private void Form1Load(object sender, EventArgs e)
@@ -82,7 +82,7 @@ namespace Inventory
                         foreach (DataGridViewRow row in ModifyProduct_PartsAssociated_GridView.Rows)
                         {
                             Part associatedPart = (Part)row.DataBoundItem;
-                            product.AssociatedParts.Add(associatedPart);
+                            Product.AssociatedParts.Add(associatedPart);
                         }
                     }
                     catch { }
@@ -150,7 +150,7 @@ namespace Inventory
             Part part = Inventory.LookupPart(partID);
             Inventory.UpdateProduct(productID, product);
             product.AddAssociatedPart(part);
-            ModifyProduct_PartsAssociated_GridView.DataSource = product.AssociatedParts;
+            ModifyProduct_PartsAssociated_GridView.DataSource = Product.AssociatedParts;
         }
     }
 }

@@ -11,14 +11,14 @@ using System.Windows.Forms;
 namespace Inventory
 {
 
-    public partial class ModifyPartForm : Form
+    public partial class ModifyPart: Form
     {
-        public ModifyPartForm()
+        public ModifyPart()
         {
             InitializeComponent();
         }
 
-        public ModifyPartForm(Inhouse inhouse)
+        public ModifyPart(Inhouse inhouse)
         {
             InitializeComponent();
             
@@ -33,7 +33,7 @@ namespace Inventory
             InhouseRadio.Checked = true;
         }
 
-        public ModifyPartForm(Outsourced outsourced)
+        public ModifyPart(Outsourced outsourced)
         {
             InitializeComponent();
 

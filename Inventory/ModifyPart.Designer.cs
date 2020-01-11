@@ -1,4 +1,4 @@
-﻿using System.ComponentModel;
+﻿//using System.ComponentModel;
 
 namespace Inventory
 {
@@ -7,8 +7,8 @@ namespace Inventory
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private IContainer components = null;
-
+        //private IContainer components = null;
+        private System.ComponentModel.IContainer components = null;
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>

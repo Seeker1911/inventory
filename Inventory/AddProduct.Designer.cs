@@ -346,6 +346,7 @@ namespace Inventory
         private System.Windows.Forms.DataGridView AddProduct_PartsAssociated_GridView;
         private System.Windows.Forms.Button CancelBtn;
         private System.Windows.Forms.Button SaveBtn;
+        private System.Windows.Forms.Button ResetFields_Btn;
         private System.Windows.Forms.Label Add_Product_Label;
     }
 }

@@ -167,12 +167,12 @@ namespace Inventory
             if (MainParts_GridView.CurrentRow.DataBoundItem.GetType() == typeof(Inhouse))
             {
                 Inhouse inhousePart = (Inhouse)MainParts_GridView.CurrentRow.DataBoundItem;
-                new ModifyPartForm(inhousePart).ShowDialog();
+                new ModifyPart(inhousePart).ShowDialog();
             }
             else if (MainParts_GridView.CurrentRow.DataBoundItem.GetType() == typeof(Outsourced))
             {
                 Outsourced outsourcedPart = (Outsourced)MainParts_GridView.CurrentRow.DataBoundItem;
-                new ModifyPartForm(outsourcedPart).ShowDialog();
+                new ModifyPart(outsourcedPart).ShowDialog();
             }
 
         }
@@ -188,7 +188,7 @@ namespace Inventory
                     // Inventory.DeletePart(part);
                     var rowIndex = MainParts_GridView.CurrentCell.RowIndex;
                     MainParts_GridView.Rows.RemoveAt(rowIndex);
-                    product.RemoveAssociatedPart(rowIndex);
+                    Product.RemoveAssociatedPart(rowIndex);
                 }
                 else return;
             }
@@ -263,14 +263,14 @@ namespace Inventory
         private void Main_Products_Add_Btn_Click(object sender, EventArgs e)
         {
             // bring up instance of Add product screen
-            new AddProductForm().ShowDialog();
+            new AddProduct().ShowDialog();
         }
 
         private void Main_Products_Modify_Btn_Click(object sender, EventArgs e)
         {
             // bring up instance of Modfy product screen and product
             Product product = (Product)MainProducts_GridView.CurrentRow.DataBoundItem;
-            new ModifyProductForm(product).ShowDialog();
+            new ModifyProduct(product).ShowDialog();
         }
 
         private void Main_Products_Delete_Btn_Click(object sender, EventArgs e)
@@ -279,7 +279,7 @@ namespace Inventory
             if (confirm == DialogResult.OK)
             {
                 Product product = (Product)MainProducts_GridView.CurrentRow.DataBoundItem;
-                if (product.AssociatedParts.Count > 0)
+                if (Product.AssociatedParts.Count > 0)
                 {
                     MessageBox.Show("Cannot delete a product that has associated parts.  Remove assosicated parts prior to attempting to remove a product.");
                 }
