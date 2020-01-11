@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\michael mead\.Rider2019.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\michael mead\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_Inventory.842173145.00" t="ExcludeRecursive" />
-    <e p="C:\Users\michael mead\RiderProjects\Inventory" t="IncludeFlat">
-      <e p="Inventory" t="IncludeRecursive">
+    <e p="$USER_HOME$/Library/Caches/Rider2019.3/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2019.3/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_Inventory.276230792.00" t="ExcludeRecursive" />
+    <e p="$PROJECT_DIR$" t="IncludeFlat">
+      <e p="inventory" t="IncludeRecursive">
         <e p="AddPart.Designer.cs" t="Include" />
         <e p="AddPartForm.cs" t="Include" />
         <e p="AddProduct.cs" t="Include" />

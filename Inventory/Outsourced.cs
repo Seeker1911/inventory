@@ -11,7 +11,6 @@ namespace Inventory
 {
     public class Outsourced : Part
     {
-        
         private string _companyName;
         // Properties
         public string CompanyName
@@ -21,15 +20,24 @@ namespace Inventory
         }
 
         // Constructor
+        public Outsourced(int partID, string name, decimal price, int inStock, int min, int max)
+        {
+            PartID = partID;
+            Name = name;
+            Price = price;
+            InStock = inStock;
+            Min = min;
+            Max = max;
+        }
         public Outsourced(int partID, string name, decimal price, int inStock, int min, int max, string companyName)
         {
-            _partID = partID;
-            _name = name;
-            _price = price;
-            _inStock = inStock;
-            _min = min;
-            _max = max;
-            _companyName = companyName;
+            PartID = partID;
+            Name = name;
+            Price = price;
+            InStock = inStock;
+            Min = min;
+            Max = max;
+            CompanyName = companyName;
         }
     }
 }

@@ -185,7 +185,7 @@ namespace Inventory
             this.MinTextBox.Location = new System.Drawing.Point(370, 236);
             this.MinTextBox.Name = "MinTextBox";
             this.MinTextBox.Size = new System.Drawing.Size(100, 20);
-            this.MinTextBox.TabIndex = 14;
+            this.MinTextBox.TabIndex = 15;
             // 
             // IdentifierLabelTextBox
             // 
@@ -228,13 +228,14 @@ namespace Inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.InactiveCaption; 
             this.ClientSize = new System.Drawing.Size(548, 424);
             this.Controls.Add(this.AddPartLabel);
             this.Controls.Add(this.CancelBtn);
             this.Controls.Add(this.SaveBtn);
             this.Controls.Add(this.IdentifierLabelTextBox);
-            this.Controls.Add(this.MaxTextBox);
             this.Controls.Add(this.MinTextBox);
+            this.Controls.Add(this.MaxTextBox);
             this.Controls.Add(this.PriceCostTextBox);
             this.Controls.Add(this.InventoryTextBox);
             this.Controls.Add(this.NameTextBox);
@@ -268,8 +269,8 @@ namespace Inventory
         private System.Windows.Forms.TextBox NameTextBox;
         private System.Windows.Forms.TextBox InventoryTextBox;
         private System.Windows.Forms.TextBox PriceCostTextBox;
-        private System.Windows.Forms.TextBox MinTextBox;
         private System.Windows.Forms.TextBox MaxTextBox;
+        private System.Windows.Forms.TextBox MinTextBox;
         private System.Windows.Forms.TextBox IdentifierLabelTextBox;
         private System.Windows.Forms.Button SaveBtn;
         private System.Windows.Forms.Button CancelBtn;

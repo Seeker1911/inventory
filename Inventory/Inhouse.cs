@@ -21,16 +21,23 @@ namespace Inventory
         }
 
         // Constructor
-
+        public Inhouse(int partID, string name, decimal price, int inStock, int min, int max)
+        {
+            PartID = partID;
+            Name = name;
+            Price = price;
+            InStock = inStock;
+            Min = min;
+            Max = max;
+        }
         public Inhouse(int partID, string name, decimal price, int inStock, int min, int max, int machineID)
         {
-            _partID = partID;
-            _name = name;
-            _price = price;
-            _inStock = inStock;
-            _min = min;
-            _max = max;
-            _machineID = machineID;
-        }     
+            PartID = partID;
+            Name = name;
+            Price = price;
+            InStock = inStock;
+            Min = min;
+            Max = max;
+            MachineID = machineID;        }     
     }
 }

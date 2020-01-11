@@ -123,6 +123,7 @@
             this.Main_Parts_Search_TextBox.Name = "Main_Parts_Search_TextBox";
             this.Main_Parts_Search_TextBox.Size = new System.Drawing.Size(139, 20);
             this.Main_Parts_Search_TextBox.TabIndex = 3;
+            this.Main_Parts_Search_TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Main_Parts_Search_TextBox_KeyPress);
             // 
             // Main_Parts_Search_Btn
             // 
@@ -190,6 +191,7 @@
             this.Main_Products_Search_TextBox.Name = "Main_Products_Search_TextBox";
             this.Main_Products_Search_TextBox.Size = new System.Drawing.Size(136, 20);
             this.Main_Products_Search_TextBox.TabIndex = 11;
+            this.Main_Products_Search_TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Main_Products_Search_TextBox_KeyPress);
             // 
             // MainParts_GridView
             // 

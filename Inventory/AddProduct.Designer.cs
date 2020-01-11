@@ -39,8 +39,8 @@ namespace Inventory
             this.DeleteBtn = new System.Windows.Forms.Button();
             this.Candidate_Parts_Label = new System.Windows.Forms.Label();
             this.Parts_Associated_Label = new System.Windows.Forms.Label();
-            this.MaxTextBox = new System.Windows.Forms.TextBox();
             this.MinTextBox = new System.Windows.Forms.TextBox();
+            this.MaxTextBox = new System.Windows.Forms.TextBox();
             this.PriceTextBox = new System.Windows.Forms.TextBox();
             this.InventoryTextBox = new System.Windows.Forms.TextBox();
             this.NameTextBox = new System.Windows.Forms.TextBox();
@@ -54,6 +54,8 @@ namespace Inventory
             this.AddProduct_PartsAssociated_GridView = new System.Windows.Forms.DataGridView();
             this.CancelBtn = new System.Windows.Forms.Button();
             this.SaveBtn = new System.Windows.Forms.Button();
+            this.ResetFields_Btn = new System.Windows.Forms.Button();
+            Add_Product_Label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize) (this.AddProduct_CandidateParts_GridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.AddProduct_PartsAssociated_GridView)).BeginInit();
             this.SuspendLayout();
@@ -141,19 +143,19 @@ namespace Inventory
             this.Parts_Associated_Label.TabIndex = 25;
             this.Parts_Associated_Label.Text = "Parts Associated with this Product";
             // 
-            // MaxTextBox
-            // 
-            this.MaxTextBox.Location = new System.Drawing.Point(112, 316);
-            this.MaxTextBox.Name = "MaxTextBox";
-            this.MaxTextBox.Size = new System.Drawing.Size(131, 23);
-            this.MaxTextBox.TabIndex = 37;
-            // 
             // MinTextBox
             // 
-            this.MinTextBox.Location = new System.Drawing.Point(310, 316);
+            this.MinTextBox.Location = new System.Drawing.Point(96, 316);
             this.MinTextBox.Name = "MinTextBox";
             this.MinTextBox.Size = new System.Drawing.Size(116, 23);
             this.MinTextBox.TabIndex = 36;
+            // 
+            // MaxTextBox
+            // 
+            this.MaxTextBox.Location = new System.Drawing.Point(250, 275);
+            this.MaxTextBox.Name = "MaxTextBox";
+            this.MaxTextBox.Size = new System.Drawing.Size(131, 23);
+            this.MaxTextBox.TabIndex = 37;
             // 
             // PriceTextBox
             // 
@@ -273,16 +275,27 @@ namespace Inventory
             this.SaveBtn.UseVisualStyleBackColor = true;
             this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
+            // ResetFields_Btn
+            // 
+            this.ResetFields_Btn.Location = new System.Drawing.Point(69, 314);
+            this.ResetFields_Btn.Name = "ResetFields_Btn";
+            this.ResetFields_Btn.Size = new System.Drawing.Size(75, 23);
+            this.ResetFields_Btn.TabIndex = 41;
+            this.ResetFields_Btn.Text = "Reset Fields";
+            this.ResetFields_Btn.UseVisualStyleBackColor = true;
+            this.ResetFields_Btn.Click += new System.EventHandler(this.ResetFields_Btn_Click);
+            // 
             // AddProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(979, 524);
+            this.Controls.Add(this.ResetFields_Btn);
             this.Controls.Add(this.SaveBtn);
             this.Controls.Add(this.CancelBtn);
             this.Controls.Add(this.AddProduct_PartsAssociated_GridView);
-            this.Controls.Add(this.MaxTextBox);
             this.Controls.Add(this.MinTextBox);
+            this.Controls.Add(this.MaxTextBox);
             this.Controls.Add(this.PriceTextBox);
             this.Controls.Add(this.InventoryTextBox);
             this.Controls.Add(this.NameTextBox);
@@ -318,8 +331,8 @@ namespace Inventory
         private System.Windows.Forms.Button DeleteBtn;
         private System.Windows.Forms.Label Candidate_Parts_Label;
         private System.Windows.Forms.Label Parts_Associated_Label;
-        private System.Windows.Forms.TextBox MaxTextBox;
         private System.Windows.Forms.TextBox MinTextBox;
+        private System.Windows.Forms.TextBox MaxTextBox;
         private System.Windows.Forms.TextBox PriceTextBox;
         private System.Windows.Forms.TextBox InventoryTextBox;
         private System.Windows.Forms.TextBox NameTextBox;
