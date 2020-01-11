@@ -50,8 +50,8 @@ namespace Inventory
             this.NameTextBox = new System.Windows.Forms.TextBox();
             this.InventoryTextBox = new System.Windows.Forms.TextBox();
             this.PriceCostTextBox = new System.Windows.Forms.TextBox();
-            this.MinTextBox = new System.Windows.Forms.TextBox();
             this.MaxTextBox = new System.Windows.Forms.TextBox();
+            this.MinTextBox = new System.Windows.Forms.TextBox();
             this.IdentifierLabelTextBox = new System.Windows.Forms.TextBox();
             this.SaveBtn = new System.Windows.Forms.Button();
             this.CancelBtn = new System.Windows.Forms.Button();
@@ -173,19 +173,19 @@ namespace Inventory
             this.PriceCostTextBox.Size = new System.Drawing.Size(100, 20);
             this.PriceCostTextBox.TabIndex = 13;
             // 
+            // MaxTextBox
+            // 
+            this.MaxTextBox.Location = new System.Drawing.Point(370, 236);
+            this.MaxTextBox.Name = "MaxTextBox";
+            this.MaxTextBox.Size = new System.Drawing.Size(100, 20);
+            this.MaxTextBox.TabIndex = 14;
+            // 
             // MinTextBox
             // 
             this.MinTextBox.Location = new System.Drawing.Point(370, 236);
             this.MinTextBox.Name = "MinTextBox";
             this.MinTextBox.Size = new System.Drawing.Size(100, 20);
             this.MinTextBox.TabIndex = 14;
-            // 
-            // MaxTextBox
-            // 
-            this.MaxTextBox.Location = new System.Drawing.Point(200, 236);
-            this.MaxTextBox.Name = "MaxTextBox";
-            this.MaxTextBox.Size = new System.Drawing.Size(113, 20);
-            this.MaxTextBox.TabIndex = 15;
             // 
             // IdentifierLabelTextBox
             // 
