@@ -1,19 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Globalization;
 using System.Windows.Forms;
+using static System.Int32;
+using static System.String;
 
 namespace Inventory
 {
     public partial class ModifyProduct : Form
     {
-        //private Product product = new Product();
-          //{
         public ModifyProduct(Product product)
         {
             InitializeComponent();
@@ -21,7 +15,7 @@ namespace Inventory
             IDTextBox.Text = Convert.ToString(product.ProductID);
             NameTextBox.Text = product.Name;
             InventoryTextBox.Text = Convert.ToString(product.InStock);
-            PriceTextBox.Text = Convert.ToString(product.Price);
+            PriceTextBox.Text = Convert.ToString(product.Price, CultureInfo.InvariantCulture);
             MinTextBox.Text = Convert.ToString(product.Min);
             MaxTextBox.Text = Convert.ToString(product.Max);
 
@@ -29,54 +23,47 @@ namespace Inventory
             ModifyProduct_PartsAssociated_GridView.DataSource = product.AssociatedParts;
         }
 
-        private void Form1Load(object sender, EventArgs e)
-        {
-            //RefreshForm();
-        }
-
         private void CancelBtn_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-            // verify fields are not null
-            if (String.IsNullOrWhiteSpace(IDTextBox.Text) || String.IsNullOrWhiteSpace(NameTextBox.Text) || String.IsNullOrWhiteSpace(PriceTextBox.Text) || String.IsNullOrWhiteSpace(InventoryTextBox.Text) || String.IsNullOrWhiteSpace(MinTextBox.Text) || String.IsNullOrWhiteSpace(MaxTextBox.Text))
+            if (IsNullOrWhiteSpace(IDTextBox.Text) || IsNullOrWhiteSpace(NameTextBox.Text) ||
+                IsNullOrWhiteSpace(PriceTextBox.Text) || IsNullOrWhiteSpace(InventoryTextBox.Text) ||
+                IsNullOrWhiteSpace(MinTextBox.Text) || IsNullOrWhiteSpace(MaxTextBox.Text))
             {
-                MessageBox.Show("Fields cannot be empty");
+                MessageBox.Show(@"Fields must not be empty");
                 return;
             }
-            // verify integer fields are of the appropriate type
-            if (int.Parse(IDTextBox.Text).GetType() != typeof(int) || int.Parse(InventoryTextBox.Text).GetType() != typeof(int) || int.Parse(MaxTextBox.Text).GetType() != typeof(int) || int.Parse(MaxTextBox.Text).GetType() != typeof(int))
+            if (Parse(IDTextBox.Text).GetType() != typeof(int) ||
+                Parse(InventoryTextBox.Text).GetType() != typeof(int) ||
+                Parse(MaxTextBox.Text).GetType() != typeof(int) ||
+                Parse(MaxTextBox.Text).GetType() != typeof(int))
             {
-                MessageBox.Show("Ensure fields that require integers contain integers");
+                MessageBox.Show(@"Field must be integer");
                 return;
             }
-            // verify decimal field is of the appropriate type
             if (decimal.Parse(PriceTextBox.Text).GetType() != typeof(decimal))
             {
-                MessageBox.Show("Ensure Price field entry is in decimal format. Example: 0.00");
+                MessageBox.Show(@"Must be a decimal");
                 return;
             }
-            // verify inventory level does not exceed max
-            if (int.Parse(InventoryTextBox.Text) > int.Parse(MaxTextBox.Text))
+            if (Parse(InventoryTextBox.Text) > Parse(MaxTextBox.Text))
             {
-                MessageBox.Show("Inventory stock level cannot exceed Maximum permitted stock level");
+                MessageBox.Show(@"Over maximum allowed stock level.");
                 return;
             }
-            // verify that minimum level does not exceed max
-            if (int.Parse(MinTextBox.Text) > int.Parse(MaxTextBox.Text))
+            if (Parse(MinTextBox.Text) > Parse(MaxTextBox.Text))
             {
-                MessageBox.Show("Minimum permitted stock level cannot exceed Maximum permitted stock level");
-                return;
+                MessageBox.Show(@"Set minimum stock level less than max stock level");
             }
             else
             {
-                // throw exception
                 try
                 {
-                    Product product = new Product(int.Parse(IDTextBox.Text), NameTextBox.Text, decimal.Parse(PriceTextBox.Text), int.Parse(InventoryTextBox.Text), int.Parse(MinTextBox.Text), int.Parse(MaxTextBox.Text));
+                    Product product = new Product(Parse(IDTextBox.Text), NameTextBox.Text, decimal.Parse(PriceTextBox.Text), Parse(InventoryTextBox.Text), Parse(MinTextBox.Text), Parse(MaxTextBox.Text));
                     try
                     {
                         foreach (DataGridViewRow row in ModifyProduct_PartsAssociated_GridView.Rows)
@@ -85,12 +72,16 @@ namespace Inventory
                             product.AssociatedParts.Add(associatedPart);
                         }
                     }
-                    catch { }
-                    Inventory.UpdateProduct(int.Parse(IDTextBox.Text), product);
+                    catch
+                    {
+                        // ignored
+                    }
+
+                    Inventory.UpdateProduct(Parse(IDTextBox.Text), product);
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Something went wrong");
+                    MessageBox.Show(@"Unknown Error");
                     throw;
                 }
                 this.Close();
@@ -99,46 +90,36 @@ namespace Inventory
     
         private void ModifyProduct_Search_Btn_Click(object sender, EventArgs e)
         {
-            if (ModifyProduct_Search_TextBox.TextLength < 0)
+            if (ModifyProduct_Search_TextBox.TextLength <= 0) return;
+            try
             {
-                return;
-            }
-            else
-            {
-                try
+                foreach (DataGridViewRow row in ModifyProduct_CandidateParts_GridView.Rows)
                 {
-                    foreach (DataGridViewRow row in ModifyProduct_CandidateParts_GridView.Rows)
-                    {
-                        Part part = (Part)row.DataBoundItem;
-                        Part userEntry = Inventory.LookupPart(Convert.ToInt32(ModifyProduct_Search_TextBox.Text));
+                    Part part = (Part)row.DataBoundItem;
+                    Part userEntry = Inventory.LookupPart(Convert.ToInt32(ModifyProduct_Search_TextBox.Text));
 
-                        if (userEntry.PartID == part.PartID) // Exception Handling: return null instead of throwing NullReferenceException if user searches for value that does not exist
-                        {
-                            row.Selected = true;
-                            ModifyProduct_CandidateParts_GridView.CurrentCell = row.Cells[0];
-                            return;
-                        }
-                        else
-                        {
-                            row.Selected = false;
-                        }
+                    if (userEntry.PartID == part.PartID)
+                    {
+                        row.Selected = true;
+                        ModifyProduct_CandidateParts_GridView.CurrentCell = row.Cells[0];
+                        return;
+                    }
+                    else
+                    {
+                        row.Selected = false;
                     }
                 }
-                catch { }
             }
+            catch { }
         }
 
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
-            DialogResult confirm = MessageBox.Show("Please confirm that you wish to remove this item", "Delete?", MessageBoxButtons.OKCancel);
+            DialogResult confirm = MessageBox.Show(@"Are you sure you want to delete?", @"Delete", MessageBoxButtons.OKCancel);
             {
                 if (confirm == DialogResult.OK)
                 {
                     var rowIndex = ModifyProduct_PartsAssociated_GridView.CurrentCell.RowIndex;
-                    // if (ModifyProduct_PartsAssociated_GridView.RowCount != 0)
-                    // {
-                    //     MessageBox.Show("Must not have parts associated.");
-                    // }
                     ModifyProduct_PartsAssociated_GridView.Rows.RemoveAt(rowIndex);
                 }
                 else return;
@@ -147,12 +128,11 @@ namespace Inventory
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
-            // add the part to it's AssociatedPart list
-            int productID = Convert.ToInt32(IDTextBox.Text);
-            int partID = Convert.ToInt32(ModifyProduct_CandidateParts_GridView.Rows[ModifyProduct_CandidateParts_GridView.CurrentCell.RowIndex].Cells[0].Value);
-            Product product = Inventory.LookupProduct(productID);
-            Part part = Inventory.LookupPart(partID);
-            Inventory.UpdateProduct(productID, product);
+            int productId = Convert.ToInt32(IDTextBox.Text);
+            int partId = Convert.ToInt32(ModifyProduct_CandidateParts_GridView.Rows[ModifyProduct_CandidateParts_GridView.CurrentCell.RowIndex].Cells[0].Value);
+            Product product = Inventory.LookupProduct(productId);
+            Part part = Inventory.LookupPart(partId);
+            Inventory.UpdateProduct(productId, product);
             product.AddAssociatedPart(part);
             ModifyProduct_PartsAssociated_GridView.DataSource = product.AssociatedParts;
         }
