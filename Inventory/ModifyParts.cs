@@ -1,25 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.Common;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Inventory
 {
 
-    public partial class ModifyPart: Form
+    public partial class ModifyParts: Form
     {
-        public ModifyPart()
+        public static ModifyParts CreateInstance(Inhouse inhouse)
+        {
+            return new ModifyParts(inhouse);
+        }
+
+        public ModifyParts()
         {
             InitializeComponent();
         }
 
-        public ModifyPart(Inhouse inhouse)
+        private ModifyParts(Inhouse inhouse)
         {
             InitializeComponent();
             
@@ -34,7 +31,7 @@ namespace Inventory
             InhouseRadio.Checked = true;
         }
 
-        public ModifyPart(Outsourced outsourced)
+        public ModifyParts(Outsourced outsourced)
         {
             InitializeComponent();
 

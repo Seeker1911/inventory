@@ -144,13 +144,13 @@ namespace Inventory
             if (MainParts_GridView.CurrentRow != null && MainParts_GridView.CurrentRow.DataBoundItem.GetType() == typeof(Inhouse))
             {
                 Inhouse inhousePart = (Inhouse)MainParts_GridView.CurrentRow.DataBoundItem;
-                new ModifyPart(inhousePart).ShowDialog();
+                ModifyParts.CreateInstance(inhousePart).ShowDialog();
                 RefreshForm();
             }
             else if (MainParts_GridView.CurrentRow.DataBoundItem.GetType() == typeof(Outsourced))
             {
                 Outsourced outsourcedPart = (Outsourced)MainParts_GridView.CurrentRow.DataBoundItem;
-                new ModifyPart(outsourcedPart).ShowDialog();
+                new ModifyParts(outsourcedPart).ShowDialog();
                 RefreshForm();
             }
 

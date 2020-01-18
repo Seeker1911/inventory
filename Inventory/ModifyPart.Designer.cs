@@ -2,7 +2,7 @@
 
 namespace Inventory
 {
-    partial class ModifyPart
+    partial class ModifyParts
     {
         /// <summary>
         /// Required designer variable.
@@ -221,7 +221,7 @@ namespace Inventory
             this.SaveBtn.UseVisualStyleBackColor = true;
             this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
-            // ModifyPart
+            // ModifyParts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -245,7 +245,7 @@ namespace Inventory
             this.Controls.Add(this.OutsourcedRadio);
             this.Controls.Add(this.InhouseRadio);
             this.Controls.Add(this.ModifyPartLabel);
-            this.Name = "ModifyPart";
+            this.Name = "ModifyParts";
             this.Text = "Inventory Part";
             this.ResumeLayout(false);
             this.PerformLayout();

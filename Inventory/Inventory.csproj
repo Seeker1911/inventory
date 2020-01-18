@@ -66,11 +66,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Main_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModifyPart.cs">
+    <Compile Include="ModifyParts.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ModifyPart.Designer.cs">
-      <DependentUpon>ModifyPart.cs</DependentUpon>
+      <DependentUpon>ModifyParts.cs</DependentUpon>
     </Compile>
     <Compile Include="ModifyProduct.cs">
       <SubType>Form</SubType>
@@ -87,7 +87,7 @@
       <DependentUpon>AddProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModifyPart.resx">
-      <DependentUpon>ModifyPart.cs</DependentUpon>
+      <DependentUpon>ModifyParts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModifyProduct.resx">
       <DependentUpon>ModifyProduct.cs</DependentUpon>

@@ -17,9 +17,9 @@
         <e p="Inventory.cs" t="Include" />
         <e p="Inventory.csproj" t="IncludeRecursive" />
         <e p="Main_Form.cs" t="Include" />
-        <e p="ModifyPart.cs" t="Include" />
         <e p="ModifyPart.Designer.cs" t="Include" />
         <e p="ModifyPart.resx" t="Include" />
+        <e p="ModifyParts.cs" t="Include" />
         <e p="ModifyProduct.cs" t="Include" />
         <e p="ModifyProduct.Designer.cs" t="Include" />
         <e p="ModifyProduct.resx" t="Include" />
