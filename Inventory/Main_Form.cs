@@ -75,12 +75,12 @@ namespace Inventory
             MainProducts_GridView.ClearSelection();
         }
 
-        private void Main_Exit_Btn_Click(object sender, EventArgs e)
+        private void ExitButton(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void Main_Parts_Search_Btn_Click(object sender, EventArgs e)
+        private void PartsSearch(object sender, EventArgs e)
         {
             if (Main_Parts_Search_TextBox.TextLength > 0)
             {
@@ -97,10 +97,8 @@ namespace Inventory
                             MainParts_GridView.CurrentCell = row.Cells[0];
                             return;
                         }
-                        else
-                        {
-                            row.Selected = false;
-                        }
+
+                        row.Selected = false;
                     }
                 }
                 catch { }
@@ -133,13 +131,13 @@ namespace Inventory
                 }
             }
         }
-        private void Main_Parts_Add_Btn_Click(object sender, EventArgs e)
+        private void Main_Parts_Add_Button(object sender, EventArgs e)
         {
             AddPartForm addPartForm = new AddPartForm();
             addPartForm.Show();
         }
 
-        private void Main_Parts_Modify_Btn_Click(object sender, EventArgs e)
+        private void Main_Parts_Modify(object sender, EventArgs e)
         {
             if (MainParts_GridView.CurrentRow != null && MainParts_GridView.CurrentRow.DataBoundItem.GetType() == typeof(Inhouse))
             {
@@ -156,7 +154,7 @@ namespace Inventory
 
         }
 
-        private void Main_Parts_Delete_Btn_Click(object sender, EventArgs e)
+        private void Main_Parts_Delete(object sender, EventArgs e)
         {
             DialogResult confirm = MessageBox.Show(@"Are you sure you want to delete this ?", @"Delete", MessageBoxButtons.OKCancel);
             {
@@ -167,17 +165,12 @@ namespace Inventory
                     MainParts_GridView.Rows.RemoveAt(rowIndex);
                     Product.RemoveAssociatedPart(rowIndex);
                 }
-                // else return;
             }
         }
 
-        private void Main_Products_Search_Btn_Click(object sender, EventArgs e)
+        private void Main_Products_Search(object sender, EventArgs e)
         {
-            if (Main_Products_Search_TextBox.TextLength < 0)
-            {
-                return;
-            }
-            else
+            if (Main_Products_Search_TextBox.TextLength > 0)
             {
                 try
                 {
@@ -192,10 +185,7 @@ namespace Inventory
                             MainProducts_GridView.CurrentCell = row.Cells[0];
                             return;
                         }
-                        else
-                        {
-                            row.Selected = false;
-                        }
+                        row.Selected = false;
                     }
                 }
                 catch
@@ -229,12 +219,12 @@ namespace Inventory
             }
         }
 
-        private void Main_Products_Add_Btn_Click(object sender, EventArgs e)
+        private void Main_Products_Add(object sender, EventArgs e)
         {
             new AddProduct().ShowDialog();
         }
 
-        private void Main_Products_Modify_Btn_Click(object sender, EventArgs e)
+        private void Main_Products_Modify(object sender, EventArgs e)
         {
             if (MainProducts_GridView.CurrentRow != null)
             {
@@ -244,7 +234,7 @@ namespace Inventory
             RefreshForm();
         }
 
-        private void Main_Products_Delete_Btn_Click(object sender, EventArgs e)
+        private void Main_Products_Delete(object sender, EventArgs e)
         {
             DialogResult confirm = MessageBox.Show(@"Are you sure you want to delete this ?", @"Delete", MessageBoxButtons.OKCancel);
             if (confirm != DialogResult.OK)

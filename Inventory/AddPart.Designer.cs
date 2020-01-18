@@ -31,8 +31,8 @@ namespace Inventory
         /// </summary>
         private void InitializeComponent()
         {
-            this.InhouseRadio = new System.Windows.Forms.RadioButton();
-            this.OutsourcedRadio = new System.Windows.Forms.RadioButton();
+            this.InhouseCheck = new System.Windows.Forms.RadioButton();
+            this.OutsourcedCheck = new System.Windows.Forms.RadioButton();
             this.ID = new System.Windows.Forms.Label();
             this.NameLabel = new System.Windows.Forms.Label();
             this.InventoryLabel = new System.Windows.Forms.Label();
@@ -52,29 +52,29 @@ namespace Inventory
             this.AddPartLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // InhouseRadio
+            // InhouseCheck
             // 
-            this.InhouseRadio.AutoSize = true;
-            this.InhouseRadio.Location = new System.Drawing.Point(162, 29);
-            this.InhouseRadio.Name = "InhouseRadio";
-            this.InhouseRadio.Size = new System.Drawing.Size(68, 17);
-            this.InhouseRadio.TabIndex = 1;
-            this.InhouseRadio.TabStop = true;
-            this.InhouseRadio.Text = "In-House";
-            this.InhouseRadio.UseVisualStyleBackColor = true;
-            this.InhouseRadio.CheckedChanged += new System.EventHandler(this.InhouseChecked);
+            this.InhouseCheck.AutoSize = true;
+            this.InhouseCheck.Location = new System.Drawing.Point(162, 29);
+            this.InhouseCheck.Name = "InhouseCheck";
+            this.InhouseCheck.Size = new System.Drawing.Size(68, 17);
+            this.InhouseCheck.TabIndex = 1;
+            this.InhouseCheck.TabStop = true;
+            this.InhouseCheck.Text = "In-House";
+            this.InhouseCheck.UseVisualStyleBackColor = true;
+            this.InhouseCheck.CheckedChanged += new System.EventHandler(this.InhouseChecked);
             // 
-            // OutsourcedRadio
+            // OutsourcedCheck
             // 
-            this.OutsourcedRadio.AutoSize = true;
-            this.OutsourcedRadio.Location = new System.Drawing.Point(251, 29);
-            this.OutsourcedRadio.Name = "OutsourcedRadio";
-            this.OutsourcedRadio.Size = new System.Drawing.Size(80, 17);
-            this.OutsourcedRadio.TabIndex = 2;
-            this.OutsourcedRadio.TabStop = true;
-            this.OutsourcedRadio.Text = "Outsourced";
-            this.OutsourcedRadio.UseVisualStyleBackColor = true;
-            this.OutsourcedRadio.CheckedChanged += new System.EventHandler(this.OutsourceChecked);
+            this.OutsourcedCheck.AutoSize = true;
+            this.OutsourcedCheck.Location = new System.Drawing.Point(251, 29);
+            this.OutsourcedCheck.Name = "OutsourcedCheck";
+            this.OutsourcedCheck.Size = new System.Drawing.Size(80, 17);
+            this.OutsourcedCheck.TabIndex = 2;
+            this.OutsourcedCheck.TabStop = true;
+            this.OutsourcedCheck.Text = "Outsourced";
+            this.OutsourcedCheck.UseVisualStyleBackColor = true;
+            this.OutsourcedCheck.CheckedChanged += new System.EventHandler(this.OutsourceChecked);
             // 
             // ID
             // 
@@ -196,7 +196,7 @@ namespace Inventory
             this.SaveBtn.TabIndex = 17;
             this.SaveBtn.Text = "Save";
             this.SaveBtn.UseVisualStyleBackColor = true;
-            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
+            this.SaveBtn.Click += new System.EventHandler(this.SaveButton);
             // 
             // CancelBtn
             // 
@@ -206,7 +206,7 @@ namespace Inventory
             this.CancelBtn.TabIndex = 18;
             this.CancelBtn.Text = "Cancel";
             this.CancelBtn.UseVisualStyleBackColor = true;
-            this.CancelBtn.Click += new System.EventHandler(this.CancelBtn_Click);
+            this.CancelBtn.Click += new System.EventHandler(this.CancelButtonClick);
             // 
             // AddPartLabel
             // 
@@ -241,8 +241,8 @@ namespace Inventory
             this.Controls.Add(this.InventoryLabel);
             this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.ID);
-            this.Controls.Add(this.OutsourcedRadio);
-            this.Controls.Add(this.InhouseRadio);
+            this.Controls.Add(this.OutsourcedCheck);
+            this.Controls.Add(this.InhouseCheck);
             this.Name = "AddPartForm";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -250,8 +250,8 @@ namespace Inventory
 
         #endregion
         
-        private System.Windows.Forms.RadioButton InhouseRadio;
-        private System.Windows.Forms.RadioButton OutsourcedRadio;
+        private System.Windows.Forms.RadioButton InhouseCheck;
+        private System.Windows.Forms.RadioButton OutsourcedCheck;
         private System.Windows.Forms.Label ID;
         private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.Label InventoryLabel;

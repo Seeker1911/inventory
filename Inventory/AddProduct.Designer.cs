@@ -95,7 +95,7 @@ namespace Inventory
             this.AddBtn.TabIndex = 20;
             this.AddBtn.Text = "Add";
             this.AddBtn.UseVisualStyleBackColor = true;
-            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
+            this.AddBtn.Click += new System.EventHandler(this.AddButton);
             // 
             // SearchBtn
             // 
@@ -105,7 +105,7 @@ namespace Inventory
             this.SearchBtn.TabIndex = 19;
             this.SearchBtn.Text = "Search";
             this.SearchBtn.UseVisualStyleBackColor = true;
-            this.SearchBtn.Click += new System.EventHandler(this.SearchBtn_Click);
+            this.SearchBtn.Click += new System.EventHandler(this.SearchButton);
             // 
             // AddProduct_Search_TextBox
             // 
@@ -122,7 +122,7 @@ namespace Inventory
             this.DeleteBtn.TabIndex = 16;
             this.DeleteBtn.Text = "Delete";
             this.DeleteBtn.UseVisualStyleBackColor = true;
-            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
+            this.DeleteBtn.Click += new System.EventHandler(this.DeleteButton);
             // 
             // Candidate_Parts_Label
             // 
@@ -263,7 +263,7 @@ namespace Inventory
             this.CancelBtn.TabIndex = 39;
             this.CancelBtn.Text = "Cancel";
             this.CancelBtn.UseVisualStyleBackColor = true;
-            this.CancelBtn.Click += new System.EventHandler(this.CancelBtn_Click);
+            this.CancelBtn.Click += new System.EventHandler(this.CancelButtonClick);
             // 
             // SaveBtn
             // 
@@ -273,7 +273,7 @@ namespace Inventory
             this.SaveBtn.TabIndex = 40;
             this.SaveBtn.Text = "Save";
             this.SaveBtn.UseVisualStyleBackColor = true;
-            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
+            this.SaveBtn.Click += new System.EventHandler(this.SaveButton);
             // 
             // ResetFields_Btn
             // 
@@ -283,7 +283,7 @@ namespace Inventory
             this.ResetFields_Btn.TabIndex = 41;
             this.ResetFields_Btn.Text = "Reset Fields";
             this.ResetFields_Btn.UseVisualStyleBackColor = true;
-            this.ResetFields_Btn.Click += new System.EventHandler(this.ResetFields_Btn_Click);
+            this.ResetFields_Btn.Click += new System.EventHandler(this.ResetAllFields);
             // 
             // AddProduct
             // 

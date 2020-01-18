@@ -19,12 +19,12 @@ namespace Inventory
         {
         }
 
-        private void CancelBtn_Click(object sender, EventArgs e)
+        private void CancelButtonClick(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void SaveBtn_Click(object sender, EventArgs e)
+        private void SaveButton(object sender, EventArgs e)
         {
             if (IsNullOrWhiteSpace(IDTextBox.Text) || IsNullOrWhiteSpace(NameTextBox.Text) ||
                 IsNullOrWhiteSpace(PriceTextBox.Text) || IsNullOrWhiteSpace(InventoryTextBox.Text) ||
@@ -82,7 +82,7 @@ namespace Inventory
             }
         }
 
-        private void SearchBtn_Click(object sender, EventArgs e)
+        private void SearchButton(object sender, EventArgs e)
         {
             if (AddProduct_Search_TextBox == null || AddProduct_Search_TextBox.TextLength >= 0)
             {
@@ -109,13 +109,13 @@ namespace Inventory
             }
         }
 
-        private void AddBtn_Click(object sender, EventArgs e)
+        private void AddButton(object sender, EventArgs e)
         {
             Part part = (Part)AddProduct_CandidateParts_GridView.CurrentRow.DataBoundItem;
             product.AddAssociatedPart(part);
         }
 
-        private void DeleteBtn_Click(object sender, EventArgs e)
+        private void DeleteButton(object sender, EventArgs e)
         {
             DialogResult confirm = MessageBox.Show(@"Are you sure you want to delete?", @"Delete",
                 MessageBoxButtons.OKCancel);
@@ -128,7 +128,7 @@ namespace Inventory
                 else return;
             }
         }
-        private void ResetFields_Btn_Click(object sender, EventArgs e)
+        private void ResetAllFields(object sender, EventArgs e)
         {
             foreach (Control cont in Controls)
             {

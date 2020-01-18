@@ -9,11 +9,11 @@ namespace Inventory
         public AddPartForm()
         {
             InitializeComponent();
-            InhouseRadio.Checked = true;
+            InhouseCheck.Checked = true;
         }
-        private void CancelBtn_Click(object sender, EventArgs e)
+        private void CancelButtonClick(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void InhouseChecked(object sender, EventArgs e)
@@ -26,14 +26,12 @@ namespace Inventory
             IdentifierLabel.Text = "Company Name";
         }
 
-        private void SaveBtn_Click(object sender, EventArgs e)
+        private void SaveButton(object sender, EventArgs e)
         {
-            if (InhouseRadio.Checked)
+            if (InhouseCheck.Checked)
             {
 
-                InhouseRadio.Checked = true;
-                // Inhouse inhousePart = new Inhouse(int.Parse(IDTextBox.Text), NameTextBox.Text, decimal.Parse(PriceCostTextBox.Text), int.Parse(InventoryTextBox.Text), int.Parse(MinTextBox.Text), int.Parse(MaxTextBox.Text), int.Parse(IdentifierLabelTextBox.Text));
-                // Inventory.AddPart(inhousePart);
+                InhouseCheck.Checked = true;
                 if (MaxTextBox != null)
                 {
                     if (IDTextBox != null)
@@ -51,28 +49,24 @@ namespace Inventory
                             return;
 
                         }
-                        if (int.Parse(InventoryTextBox.Text) > int.Parse(MaxTextBox.Text))
-                        {
-                            MessageBox.Show(@"Inventory stock level cannot exceed Maximum permitted stock level");
-                            return;
-                        }
                         if (int.Parse(MinTextBox.Text) > int.Parse(MaxTextBox.Text))
                         {
                             MessageBox.Show(@"Minimum permitted stock level cannot exceed Maximum permitted stock level");
                             return;
                         }
-                        else
+                        if (int.Parse(InventoryTextBox.Text) > int.Parse(MaxTextBox.Text))
                         {
-                            Inventory.AddPart(inhousePart);
+                            MessageBox.Show(@"Inventory stock level cannot exceed Maximum permitted stock level");
+                            return;
                         }
+
+                        Inventory.AddPart(inhousePart);
                     }
                 }
             }
             else
             {
-                OutsourcedRadio.Checked = true;
-                // Outsourced outsourcedPart = new Outsourced(int.Parse(IDTextBox.Text), NameTextBox.Text, decimal.Parse(PriceCostTextBox.Text), int.Parse(InventoryTextBox.Text), int.Parse(MinTextBox.Text), int.Parse(MaxTextBox.Text), IdentifierLabelTextBox.Text);
-                // Inventory.AddPart(outsourcedPart);
+                OutsourcedCheck.Checked = true;
                 Outsourced outsourcedPart = new Outsourced(int.Parse(IDTextBox.Text), NameTextBox.Text, decimal.Parse(PriceCostTextBox.Text), int.Parse(InventoryTextBox.Text),int.Parse(MinTextBox.Text), int.Parse(MaxTextBox.Text), IdentifierLabelTextBox.Text);
                 if (IsNullOrWhiteSpace(NameTextBox.Text))
                 {
