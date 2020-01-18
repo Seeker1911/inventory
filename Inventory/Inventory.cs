@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.ComponentModel;
+using System.Data;
 
 namespace Inventory
 {
@@ -219,19 +220,43 @@ namespace Inventory
         // iterate through Parts list and update Part fields with user arguments
         public static void UpdatePart(int partID, Part part) // bind to save button
         {
-            foreach (Part p in Parts)
+            if (part.PartID != partID)
             {
-                if (p.PartID == partID)
-                {
-                    p.PartID = part.PartID;
-                    p.Name = part.Name;
-                    p.Price = part.Price;
-                    p.InStock = part.InStock;
-                    p.Min = part.Min;
-                    p.Max = part.Max;
-                    return;
-                }
+                MessageBox.Show("not the same part");
             }
+            else if (part.PartID == partID)
+            {
+                Part existing_part = LookupPart(partID);
+                existing_part.Name = part.Name;
+                existing_part.Price = part.Price;
+                existing_part.InStock = part.InStock;
+                existing_part.Max = part.Max;
+                existing_part.Min = part.Min;
+            }
+            // foreach (Part p in Parts)
+            // {
+            //     if (p.PartID == part.PartID)
+            //     {
+            //         p.PartID = part.PartID;
+            //         p.Name = part.Name;
+            //         p.Price = part.Price;
+            //         p.InStock = part.InStock;
+            //         p.Min = part.Min;
+            //         p.Max = part.Max;
+            //         // return;
+            //     }
+            //}
+
+            // if (tmp_part != null)
+            // {
+            //     
+            //         tmp_part.PartID = part.PartID;
+            //         tmp_part.Name = part.Name;
+            //         tmp_part.Price = part.Price;
+            //         tmp_part.InStock = part.InStock;
+            //         tmp_part.Min = part.Min;
+            //         tmp_part.Max = part.Max;
+            // }
         } 
     }
 }

@@ -72,14 +72,15 @@ namespace Inventory
             // 
             // MaxTextBox
             // 
-            this.MaxTextBox.Location = new System.Drawing.Point(241, 270);
+            this.MaxTextBox.Location = new System.Drawing.Point(439, 270);
             this.MaxTextBox.Name = "MaxTextBox";
             this.MaxTextBox.Size = new System.Drawing.Size(131, 23);
             this.MaxTextBox.TabIndex = 51;
+            // this.MaxTextBox.TextChanged += new System.EventHandler(this.MaxTextBox_TextChanged);
             // 
             // MinTextBox
             // 
-            this.MinTextBox.Location = new System.Drawing.Point(440, 270);
+            this.MinTextBox.Location = new System.Drawing.Point(239, 270);
             this.MinTextBox.Name = "MinTextBox";
             this.MinTextBox.Size = new System.Drawing.Size(116, 23);
             this.MinTextBox.TabIndex = 50;
@@ -117,9 +118,10 @@ namespace Inventory
             this.Max.AutoSize = true;
             this.Max.Location = new System.Drawing.Point(405, 273);
             this.Max.Name = "Max";
-            this.Max.Size = new System.Drawing.Size(29, 15);
+            this.Max.Size = new System.Drawing.Size(30, 15);
             this.Max.TabIndex = 45;
             this.Max.Text = "Max";
+            //this.Max.Click += new System.EventHandler(this.Max_Click);
             // 
             // IdentifierLabel
             // 

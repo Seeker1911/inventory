@@ -38,6 +38,7 @@ namespace Inventory
             InStock = inStock;
             Min = min;
             Max = max;
-            MachineID = machineID;        }     
+            MachineID = machineID;
+        }     
     }
 }

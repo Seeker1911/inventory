@@ -10,7 +10,7 @@ namespace Inventory
         {
             InitializeComponent();
             AddProduct_CandidateParts_GridView.DataSource = Inventory.Parts;
-            AddProduct_PartsAssociated_GridView.DataSource = Product.AssociatedParts;
+            AddProduct_PartsAssociated_GridView.DataSource = product.AssociatedParts;
         }
 
         private void Add_Product_Form_Load(object sender, EventArgs e)
@@ -90,7 +90,7 @@ namespace Inventory
                         foreach (DataGridViewRow row in AddProduct_PartsAssociated_GridView.Rows)
                         {
                             Part associatedPart = (Part)row.DataBoundItem;
-                            Product.AssociatedParts.Add(associatedPart);
+                            product.AssociatedParts.Add(associatedPart);
                         }
                     }
                     catch { }

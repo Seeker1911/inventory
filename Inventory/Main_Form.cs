@@ -168,11 +168,13 @@ namespace Inventory
             {
                 Inhouse inhousePart = (Inhouse)MainParts_GridView.CurrentRow.DataBoundItem;
                 new ModifyPart(inhousePart).ShowDialog();
+                RefreshGridViews();
             }
             else if (MainParts_GridView.CurrentRow.DataBoundItem.GetType() == typeof(Outsourced))
             {
                 Outsourced outsourcedPart = (Outsourced)MainParts_GridView.CurrentRow.DataBoundItem;
                 new ModifyPart(outsourcedPart).ShowDialog();
+                RefreshGridViews();
             }
 
         }
@@ -271,6 +273,7 @@ namespace Inventory
             // bring up instance of Modfy product screen and product
             Product product = (Product)MainProducts_GridView.CurrentRow.DataBoundItem;
             new ModifyProduct(product).ShowDialog();
+            RefreshGridViews();
         }
 
         private void Main_Products_Delete_Btn_Click(object sender, EventArgs e)
@@ -279,7 +282,7 @@ namespace Inventory
             if (confirm == DialogResult.OK)
             {
                 Product product = (Product)MainProducts_GridView.CurrentRow.DataBoundItem;
-                if (Product.AssociatedParts.Count > 0)
+                if (product.AssociatedParts.Count > 0)
                 {
                     MessageBox.Show("Cannot delete a product that has associated parts.  Remove assosicated parts prior to attempting to remove a product.");
                 }

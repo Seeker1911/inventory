@@ -13,7 +13,7 @@ namespace Inventory
 
         // Properties
 
-        public static BindingList<Part> AssociatedParts = new BindingList<Part>();
+        public BindingList<Part> AssociatedParts = new BindingList<Part>();
 
         public int ProductID
         {
@@ -73,7 +73,8 @@ namespace Inventory
                 if (part.PartID == partID)
                 {
                     AssociatedParts.Remove(part);
-                    return check = true;
+                    check = true;
+                    //return check
                 }
                 else check = false;
             }

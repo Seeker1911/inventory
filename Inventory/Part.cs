@@ -6,8 +6,8 @@
         private string _name;
         private decimal _price;
         private int _inStock;
-        private int _min;
         private int _max;
+        private int _min;
 
         // Properties
         public int PartID

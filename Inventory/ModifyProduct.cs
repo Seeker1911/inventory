@@ -26,7 +26,7 @@ namespace Inventory
             MaxTextBox.Text = Convert.ToString(product.Max);
 
             ModifyProduct_CandidateParts_GridView.DataSource = Inventory.Parts;
-            ModifyProduct_PartsAssociated_GridView.DataSource = Product.AssociatedParts;
+            ModifyProduct_PartsAssociated_GridView.DataSource = product.AssociatedParts;
         }
 
         private void Form1Load(object sender, EventArgs e)
@@ -82,7 +82,7 @@ namespace Inventory
                         foreach (DataGridViewRow row in ModifyProduct_PartsAssociated_GridView.Rows)
                         {
                             Part associatedPart = (Part)row.DataBoundItem;
-                            Product.AssociatedParts.Add(associatedPart);
+                            product.AssociatedParts.Add(associatedPart);
                         }
                     }
                     catch { }
@@ -135,6 +135,10 @@ namespace Inventory
                 if (confirm == DialogResult.OK)
                 {
                     var rowIndex = ModifyProduct_PartsAssociated_GridView.CurrentCell.RowIndex;
+                    // if (ModifyProduct_PartsAssociated_GridView.RowCount != 0)
+                    // {
+                    //     MessageBox.Show("Must not have parts associated.");
+                    // }
                     ModifyProduct_PartsAssociated_GridView.Rows.RemoveAt(rowIndex);
                 }
                 else return;
@@ -150,7 +154,7 @@ namespace Inventory
             Part part = Inventory.LookupPart(partID);
             Inventory.UpdateProduct(productID, product);
             product.AddAssociatedPart(part);
-            ModifyProduct_PartsAssociated_GridView.DataSource = Product.AssociatedParts;
+            ModifyProduct_PartsAssociated_GridView.DataSource = product.AssociatedParts;
         }
     }
 }
