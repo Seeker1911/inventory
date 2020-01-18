@@ -118,13 +118,22 @@ namespace Inventory
             this.PriceCost.TabIndex = 6;
             this.PriceCost.Text = "Price / Cost";
             // 
+            // Min
+            // 
+            this.Min.AutoSize = true;
+            this.Min.Location = new System.Drawing.Point(170, 239);
+            this.Min.Name = "Min";
+            this.Min.Size = new System.Drawing.Size(24, 13);
+            this.Min.TabIndex = 7;
+            this.Min.Text = "Min";
+            // 
             // Max
             // 
             this.Max.AutoSize = true;
             this.Max.Location = new System.Drawing.Point(337, 239);
             this.Max.Name = "Max";
             this.Max.Size = new System.Drawing.Size(27, 13);
-            this.Max.TabIndex = 7;
+            this.Max.TabIndex = 8;
             this.Max.Text = "Max";
             // 
             // IdentifierLabel
@@ -133,17 +142,8 @@ namespace Inventory
             this.IdentifierLabel.Location = new System.Drawing.Point(113, 282);
             this.IdentifierLabel.Name = "IdentifierLabel";
             this.IdentifierLabel.Size = new System.Drawing.Size(62, 13);
-            this.IdentifierLabel.TabIndex = 8;
+            this.IdentifierLabel.TabIndex = 9;
             this.IdentifierLabel.Text = "Machine ID";
-            // 
-            // Min
-            // 
-            this.Min.AutoSize = true;
-            this.Min.Location = new System.Drawing.Point(170, 239);
-            this.Min.Name = "Min";
-            this.Min.Size = new System.Drawing.Size(24, 13);
-            this.Min.TabIndex = 9;
-            this.Min.Text = "Min";
             // 
             // IDTextBox
             // 
