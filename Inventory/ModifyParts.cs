@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Globalization;
 using System.Windows.Forms;
+using static System.Int32;
+using static System.String;
 
 namespace Inventory
 {
@@ -23,11 +26,11 @@ namespace Inventory
             IDTextBox.Text = Convert.ToString(inhouse.PartID);
             NameTextBox.Text = inhouse.Name;
             InventoryTextBox.Text = Convert.ToString(inhouse.InStock);
-            PriceCostTextBox.Text = Convert.ToString(inhouse.Price);
+            PriceCostTextBox.Text = Convert.ToString(inhouse.Price, CultureInfo.InvariantCulture);
             MinTextBox.Text = Convert.ToString(inhouse.Min);
             MaxTextBox.Text = Convert.ToString(inhouse.Max);
             IdentifierLabelTextBox.Text = Convert.ToString(inhouse.MachineID);
-            IdentifierLabel.Text = "Machine ID";
+            IdentifierLabel.Text = @"Machine ID";
             InhouseRadio.Checked = true;
         }
 
@@ -58,32 +61,33 @@ namespace Inventory
             {
                 InhouseRadio.Checked = true;
 
-                // verify fields are not null
-                if (String.IsNullOrWhiteSpace(IDTextBox.Text) || String.IsNullOrWhiteSpace(NameTextBox.Text) || String.IsNullOrWhiteSpace(PriceCostTextBox.Text) || String.IsNullOrWhiteSpace(InventoryTextBox.Text) || String.IsNullOrWhiteSpace(MinTextBox.Text) || String.IsNullOrWhiteSpace(MaxTextBox.Text))
+                if (IsNullOrWhiteSpace(IDTextBox.Text) || IsNullOrWhiteSpace(NameTextBox.Text) ||
+                    IsNullOrWhiteSpace(PriceCostTextBox.Text) || IsNullOrWhiteSpace(InventoryTextBox.Text) ||
+                    IsNullOrWhiteSpace(MinTextBox.Text) || IsNullOrWhiteSpace(MaxTextBox.Text))
                 {
-                    MessageBox.Show("Fields cannot be empty");
+                    MessageBox.Show(@"Fields cannot be empty");
                     return;
                 }
                 // verify integer fields are of the appropriate type
-                if (int.Parse(IDTextBox.Text).GetType() != typeof(int) || int.Parse(InventoryTextBox.Text).GetType() != typeof(int) || int.Parse(MaxTextBox.Text).GetType() != typeof(int) || int.Parse(MaxTextBox.Text).GetType() != typeof(int))
+                if (Parse(IDTextBox.Text).GetType() != typeof(int) || Parse(InventoryTextBox.Text).GetType() != typeof(int) || Parse(MaxTextBox.Text).GetType() != typeof(int) || Parse(MaxTextBox.Text).GetType() != typeof(int))
                 {
-                    MessageBox.Show("Ensure fields that require integers contain integers");
+                    MessageBox.Show(@"Must contain integer");
                     return;
                 }
                 // verify decimal field is of the appropriate type
                 if (decimal.Parse(PriceCostTextBox.Text).GetType() != typeof(decimal))
                 {
-                    MessageBox.Show("Ensure Price field entry is in decimal format. Example: 0.00");
+                    MessageBox.Show(@"Must be decimal");
                     return;
                 }
                 // verify inventory level does not exceed max
-                if (int.Parse(InventoryTextBox.Text) > int.Parse(MaxTextBox.Text))
+                if (Parse(InventoryTextBox.Text) > Parse(MaxTextBox.Text))
                 {
-                    MessageBox.Show("Inventory stock level cannot exceed Maximum permitted stock level");
+                    MessageBox.Show(@"Can not exceed maximum stock level.");
                     return;
                 }
                 // verify that minimum level does not exceed max
-                if (int.Parse(MinTextBox.Text) > int.Parse(MaxTextBox.Text))
+                if (Parse(MinTextBox.Text) > Parse(MaxTextBox.Text))
                 {
                     MessageBox.Show("Minimum permitted stock level cannot exceed Maximum permitted stock level");
                     return;
@@ -92,65 +96,67 @@ namespace Inventory
                 {
                     try
                     {
-                        Inhouse inhousePart = new Inhouse(int.Parse(IDTextBox.Text), NameTextBox.Text, decimal.Parse(PriceCostTextBox.Text), int.Parse(InventoryTextBox.Text), int.Parse(MinTextBox.Text), int.Parse(MaxTextBox.Text), int.Parse(IdentifierLabelTextBox.Text));
-                        Inventory.UpdatePart(int.Parse(IDTextBox.Text), inhousePart);
+                        Inhouse inhousePart = new Inhouse(Parse(IDTextBox.Text), NameTextBox.Text,
+                            decimal.Parse(PriceCostTextBox.Text), Parse(InventoryTextBox.Text),
+                            Parse(MinTextBox.Text), Parse(MaxTextBox.Text),
+                       Parse(IdentifierLabelTextBox.Text));
+                        Inventory.UpdatePart(Parse(IDTextBox.Text), inhousePart);
                     }
                     catch (Exception)
                     {
-                        MessageBox.Show("Something went wrong");
+                        MessageBox.Show(@"Unknown Error");
                         throw;
                     }
-                    this.Close();
+                    Close();
                 }
             }  
             else
             {
                 OutsourcedRadio.Checked = true;
 
-                // verify fields are not null
-                if (String.IsNullOrWhiteSpace(IDTextBox.Text) || String.IsNullOrWhiteSpace(NameTextBox.Text) || String.IsNullOrWhiteSpace(PriceCostTextBox.Text) || String.IsNullOrWhiteSpace(InventoryTextBox.Text) || String.IsNullOrWhiteSpace(MinTextBox.Text) || String.IsNullOrWhiteSpace(MaxTextBox.Text))
+                if (IsNullOrWhiteSpace(IDTextBox.Text) || IsNullOrWhiteSpace(NameTextBox.Text) ||
+                    IsNullOrWhiteSpace(PriceCostTextBox.Text) || IsNullOrWhiteSpace(InventoryTextBox.Text) ||
+                    IsNullOrWhiteSpace(MinTextBox.Text) || IsNullOrWhiteSpace(MaxTextBox.Text))
                 {
-                    MessageBox.Show("Fields cannot be empty");
+                    MessageBox.Show(@"Fields cannot be empty");
                     return;
                 }
-                // verify integer fields are of the appropriate type
-                if (int.Parse(IDTextBox.Text).GetType() != typeof(int) || int.Parse(InventoryTextBox.Text).GetType() != typeof(int) || int.Parse(MaxTextBox.Text).GetType() != typeof(int) || int.Parse(MaxTextBox.Text).GetType() != typeof(int))
+                if (Parse(IDTextBox.Text).GetType() != typeof(int) ||
+                    Parse(InventoryTextBox.Text).GetType() != typeof(int) ||
+                    Parse(MaxTextBox.Text).GetType() != typeof(int) || Parse(MaxTextBox.Text).GetType() != typeof(int))
                 {
-                    MessageBox.Show("Ensure fields that require integers contain integers");
+                    MessageBox.Show(@"Must contain integers");
                     return;
                 }
-                // verify decimal field is of the appropriate type
                 if (decimal.Parse(PriceCostTextBox.Text).GetType() != typeof(decimal))
                 {
-                    MessageBox.Show("Ensure Price field entry is in decimal format. Example: 0.00");
+                    MessageBox.Show(@"Must be a decimal");
                     return;
                 }
-                // verify inventory level does not exceed max
-                if (int.Parse(InventoryTextBox.Text) > int.Parse(MaxTextBox.Text))
+                if (Parse(InventoryTextBox.Text) > Parse(MaxTextBox.Text))
                 {
-                    MessageBox.Show("Inventory stock level cannot exceed Maximum permitted stock level");
+                    MessageBox.Show(@"Stock level can not exceed Maximum");
                     return;
                 }
-                // verify that minimum level does not exceed max
-                if (int.Parse(MinTextBox.Text) > int.Parse(MaxTextBox.Text))
+                if (Parse(MinTextBox.Text) > Parse(MaxTextBox.Text))
                 {
-                    MessageBox.Show("Minimum permitted stock level cannot exceed Maximum permitted stock level");
-                    return;
+                    MessageBox.Show(@"Minimum stock can not exceed maximum");
                 }
                 else
                 {
-                    // exception handling
                     try
                     {
-                        Outsourced outsourcedPart = new Outsourced(int.Parse(IDTextBox.Text), NameTextBox.Text, decimal.Parse(PriceCostTextBox.Text), int.Parse(InventoryTextBox.Text), int.Parse(MinTextBox.Text), int.Parse(MaxTextBox.Text), IdentifierLabelTextBox.Text);
-                        Inventory.UpdatePart(int.Parse(IDTextBox.Text), outsourcedPart);
+                        Outsourced outsourcedPart = new Outsourced(Parse(IDTextBox.Text), NameTextBox.Text,
+                            decimal.Parse(PriceCostTextBox.Text), Parse(InventoryTextBox.Text), Parse(MinTextBox.Text),
+                            Parse(MaxTextBox.Text), IdentifierLabelTextBox.Text);
+                        Inventory.UpdatePart(Parse(IDTextBox.Text), outsourcedPart);
                     }
                     catch (Exception)
                     {
-                        MessageBox.Show("Something went wrong");
+                        MessageBox.Show(@"Error");
                         throw;
                     }
-                    this.Close();
+                    Close();
                 }
             }
         }

@@ -76,7 +76,6 @@ namespace Inventory
             this.MaxTextBox.Name = "MaxTextBox";
             this.MaxTextBox.Size = new System.Drawing.Size(131, 23);
             this.MaxTextBox.TabIndex = 51;
-            // this.MaxTextBox.TextChanged += new System.EventHandler(this.MaxTextBox_TextChanged);
             // 
             // MinTextBox
             // 
@@ -121,7 +120,6 @@ namespace Inventory
             this.Max.Size = new System.Drawing.Size(30, 15);
             this.Max.TabIndex = 45;
             this.Max.Text = "Max";
-            //this.Max.Click += new System.EventHandler(this.Max_Click);
             // 
             // IdentifierLabel
             // 
@@ -221,7 +219,7 @@ namespace Inventory
             this.SaveBtn.UseVisualStyleBackColor = true;
             this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
-            // ModifyParts
+            // ModifyPart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -245,7 +243,7 @@ namespace Inventory
             this.Controls.Add(this.OutsourcedRadio);
             this.Controls.Add(this.InhouseRadio);
             this.Controls.Add(this.ModifyPartLabel);
-            this.Name = "ModifyParts";
+            this.Name = "ModifyPart";
             this.Text = "Inventory Part";
             this.ResumeLayout(false);
             this.PerformLayout();
