@@ -50,9 +50,9 @@ namespace Inventory
         public Product() { }
 
         // Overload Constructor
-        public Product(int productID, string name, decimal price, int inStock, int min, int max)
+        public Product(int productId, string name, decimal price, int inStock, int min, int max)
         {
-            _productID = productID;
+            _productID = productId;
             _name = name;
             _price = price;
             _inStock = inStock;

@@ -151,7 +151,7 @@ namespace Inventory
             // 
             // MaxTextBox
             // 
-            this.MaxTextBox.Location = new System.Drawing.Point(347, 312);
+            this.MaxTextBox.Location = new System.Drawing.Point(346, 312);
             this.MaxTextBox.Name = "MaxTextBox";
             this.MaxTextBox.Size = new System.Drawing.Size(131, 23);
             this.MaxTextBox.TabIndex = 37;
