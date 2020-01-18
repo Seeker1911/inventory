@@ -136,5 +136,10 @@ namespace Inventory
             product.AddAssociatedPart(part);
             ModifyProduct_PartsAssociated_GridView.DataSource = product.AssociatedParts;
         }
+
+        private void Form1Load(object sender, EventArgs e)
+        {
+            ///throw new NotImplementedException();
+        }
     }
 }

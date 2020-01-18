@@ -312,6 +312,7 @@ namespace Inventory
             this.Controls.Add(this.ModifyProductLabel);
             this.Name = "ModifyProduct";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1Load);
             ((System.ComponentModel.ISupportInitialize) (this.ModifyProduct_PartsAssociated_GridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.ModifyProduct_CandidateParts_GridView)).EndInit();
             this.ResumeLayout(false);
