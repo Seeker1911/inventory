@@ -182,7 +182,7 @@ namespace Inventory
             // 
             // MinTextBox
             // 
-            this.MinTextBox.Location = new System.Drawing.Point(370, 236);
+            this.MinTextBox.Location = new System.Drawing.Point(200, 236);
             this.MinTextBox.Name = "MinTextBox";
             this.MinTextBox.Size = new System.Drawing.Size(100, 20);
             this.MinTextBox.TabIndex = 15;
