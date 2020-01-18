@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using static System.String;
 
 namespace Inventory
 {
@@ -33,30 +34,38 @@ namespace Inventory
                 InhouseRadio.Checked = true;
                 // Inhouse inhousePart = new Inhouse(int.Parse(IDTextBox.Text), NameTextBox.Text, decimal.Parse(PriceCostTextBox.Text), int.Parse(InventoryTextBox.Text), int.Parse(MinTextBox.Text), int.Parse(MaxTextBox.Text), int.Parse(IdentifierLabelTextBox.Text));
                 // Inventory.AddPart(inhousePart);
-                Inhouse inhousePart = new Inhouse(int.Parse(IDTextBox.Text), NameTextBox.Text, decimal.Parse(PriceCostTextBox.Text), int.Parse(InventoryTextBox.Text),int.Parse(MinTextBox.Text), int.Parse(MaxTextBox.Text), int.Parse(IdentifierLabelTextBox.Text));
-                if (String.IsNullOrWhiteSpace(NameTextBox.Text))
+                if (MaxTextBox != null)
                 {
-                    throw new ArgumentNullException("Name cannot be empty");
-                }
-                if (int.Parse(IDTextBox.Text) != inhousePart.PartID)
-                {
-                    MessageBox.Show("Cannot alter Product's ID");
-                    return;
+                    if (IDTextBox != null)
+                    {
+                        Inhouse inhousePart = new Inhouse(int.Parse(IDTextBox.Text), NameTextBox.Text,
+                            decimal.Parse(PriceCostTextBox.Text), int.Parse(InventoryTextBox.Text), int.Parse(MinTextBox.Text),
+                            int.Parse(MaxTextBox.Text), int.Parse(IdentifierLabelTextBox.Text));
+                        if (IsNullOrWhiteSpace(NameTextBox.Text))
+                        {
+                            throw new ArgumentNullException(@"Name cannot be empty");
+                        }
+                        if (int.Parse(IDTextBox.Text) != inhousePart.PartID)
+                        {
+                            MessageBox.Show(@"Cannot alter Product's ID");
+                            return;
 
-                }
-                if (int.Parse(InventoryTextBox.Text) > int.Parse(MaxTextBox.Text))
-                {
-                    MessageBox.Show("Inventory stock level cannot exceed Maximum permitted stock level");
-                    return;
-                }
-                if (int.Parse(MinTextBox.Text) > int.Parse(MaxTextBox.Text))
-                {
-                    MessageBox.Show("Minimum permitted stock level cannot exceed Maximum permitted stock level");
-                    return;
-                }
-                else
-                {
-                    Inventory.AddPart(inhousePart);
+                        }
+                        if (int.Parse(InventoryTextBox.Text) > int.Parse(MaxTextBox.Text))
+                        {
+                            MessageBox.Show(@"Inventory stock level cannot exceed Maximum permitted stock level");
+                            return;
+                        }
+                        if (int.Parse(MinTextBox.Text) > int.Parse(MaxTextBox.Text))
+                        {
+                            MessageBox.Show(@"Minimum permitted stock level cannot exceed Maximum permitted stock level");
+                            return;
+                        }
+                        else
+                        {
+                            Inventory.AddPart(inhousePart);
+                        }
+                    }
                 }
             }
             else
@@ -65,24 +74,24 @@ namespace Inventory
                 // Outsourced outsourcedPart = new Outsourced(int.Parse(IDTextBox.Text), NameTextBox.Text, decimal.Parse(PriceCostTextBox.Text), int.Parse(InventoryTextBox.Text), int.Parse(MinTextBox.Text), int.Parse(MaxTextBox.Text), IdentifierLabelTextBox.Text);
                 // Inventory.AddPart(outsourcedPart);
                 Outsourced outsourcedPart = new Outsourced(int.Parse(IDTextBox.Text), NameTextBox.Text, decimal.Parse(PriceCostTextBox.Text), int.Parse(InventoryTextBox.Text),int.Parse(MinTextBox.Text), int.Parse(MaxTextBox.Text), IdentifierLabelTextBox.Text);
-                if (String.IsNullOrWhiteSpace(NameTextBox.Text))
+                if (IsNullOrWhiteSpace(NameTextBox.Text))
                 {
-                    throw new ArgumentNullException("Name cannot be empty");
+                    throw new ArgumentNullException(@"Name cannot be empty");
                 }
                 if (int.Parse(IDTextBox.Text) != outsourcedPart.PartID)
                 {
-                    MessageBox.Show("Cannot alter Product's ID");
+                    MessageBox.Show(@"Cannot alter Product's ID");
                     return;
 
                 }
                 if (int.Parse(InventoryTextBox.Text) > int.Parse(MaxTextBox.Text))
                 {
-                    MessageBox.Show("Inventory stock level cannot exceed Maximum permitted stock level");
+                    MessageBox.Show(@"Inventory stock level cannot be greater than max.");
                     return;
                 }
                 if (int.Parse(MinTextBox.Text) > int.Parse(MaxTextBox.Text))
                 {
-                    MessageBox.Show("Minimum permitted stock level cannot exceed Maximum permitted stock level");
+                    MessageBox.Show(@"Minimum stock level cannot exceed Maximum stock level");
                     return;
                 }
                 else
@@ -91,7 +100,6 @@ namespace Inventory
                 }
 
             }
-            // Inventory.RefreshLists();
             Close();
         }
     }
