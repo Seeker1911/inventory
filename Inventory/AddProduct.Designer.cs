@@ -84,12 +84,12 @@ namespace Inventory
                 System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.AddProduct_CandidateParts_GridView.SelectionMode =
                 System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.AddProduct_CandidateParts_GridView.Size = new System.Drawing.Size(471, 148);
+            this.AddProduct_CandidateParts_GridView.Size = new System.Drawing.Size(702, 148);
             this.AddProduct_CandidateParts_GridView.TabIndex = 22;
             // 
             // AddBtn
             // 
-            this.AddBtn.Location = new System.Drawing.Point(868, 245);
+            this.AddBtn.Location = new System.Drawing.Point(1099, 244);
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Size = new System.Drawing.Size(87, 27);
             this.AddBtn.TabIndex = 20;
@@ -116,7 +116,7 @@ namespace Inventory
             // 
             // DeleteBtn
             // 
-            this.DeleteBtn.Location = new System.Drawing.Point(868, 455);
+            this.DeleteBtn.Location = new System.Drawing.Point(1099, 454);
             this.DeleteBtn.Name = "DeleteBtn";
             this.DeleteBtn.Size = new System.Drawing.Size(87, 27);
             this.DeleteBtn.TabIndex = 16;
@@ -252,12 +252,12 @@ namespace Inventory
                 System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.AddProduct_PartsAssociated_GridView.SelectionMode =
                 System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.AddProduct_PartsAssociated_GridView.Size = new System.Drawing.Size(471, 148);
+            this.AddProduct_PartsAssociated_GridView.Size = new System.Drawing.Size(702, 148);
             this.AddProduct_PartsAssociated_GridView.TabIndex = 38;
             // 
             // CancelBtn
             // 
-            this.CancelBtn.Location = new System.Drawing.Point(868, 488);
+            this.CancelBtn.Location = new System.Drawing.Point(973, 488);
             this.CancelBtn.Name = "CancelBtn";
             this.CancelBtn.Size = new System.Drawing.Size(87, 27);
             this.CancelBtn.TabIndex = 39;
@@ -267,7 +267,7 @@ namespace Inventory
             // 
             // SaveBtn
             // 
-            this.SaveBtn.Location = new System.Drawing.Point(758, 488);
+            this.SaveBtn.Location = new System.Drawing.Point(1099, 488);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(87, 27);
             this.SaveBtn.TabIndex = 40;
@@ -277,7 +277,7 @@ namespace Inventory
             // 
             // ResetFields_Btn
             // 
-            this.ResetFields_Btn.Location = new System.Drawing.Point(159, 474);
+            this.ResetFields_Btn.Location = new System.Drawing.Point(159, 488);
             this.ResetFields_Btn.Name = "ResetFields_Btn";
             this.ResetFields_Btn.Size = new System.Drawing.Size(75, 23);
             this.ResetFields_Btn.TabIndex = 41;
@@ -289,7 +289,7 @@ namespace Inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(979, 524);
+            this.ClientSize = new System.Drawing.Size(1238, 524);
             this.Controls.Add(this.ResetFields_Btn);
             this.Controls.Add(this.SaveBtn);
             this.Controls.Add(this.CancelBtn);
