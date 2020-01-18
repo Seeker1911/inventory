@@ -1,6 +1,6 @@
 ﻿namespace Inventory
 {
-    partial class Main_Form
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -243,7 +243,7 @@
             this.Controls.Add(this.Main_Parts_Delete_Btn);
             this.Controls.Add(this.Main_Parts_Modify_Btn);
             this.Controls.Add(this.Main_Parts_Add_Btn);
-            this.Name = "Main_Form";
+            this.Name = "MainForm";
             this.Text = "Main Screen";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.MainParts_GridView)).EndInit();

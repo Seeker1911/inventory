@@ -31,7 +31,7 @@ namespace Inventory
 
         private void Form1Load(object sender, EventArgs e)
         {
-            //RefreshGridViews();
+            //RefreshForm();
         }
 
         private void CancelBtn_Click(object sender, EventArgs e)

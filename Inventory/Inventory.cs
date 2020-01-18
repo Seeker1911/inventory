@@ -12,7 +12,7 @@ namespace Inventory
 {
     public class Inventory
     {
-         Main_Form mainScreen = new Main_Form();
+         MainForm mainScreen = new MainForm();
         // Properties
         public static BindingList<Product> Products = new BindingList<Product>();
         public static BindingList<Part> Parts = new BindingList<Part>();
